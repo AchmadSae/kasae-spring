@@ -27,7 +27,6 @@ public class ValidatorTest {
 @Test
     void personValid(){
         var person = new Person("1", "Achmad");
-
         Set<ConstraintViolation<Person>> constraintViolation = validator.validate(person);
 
         Assertions.assertTrue(constraintViolation.isEmpty());
