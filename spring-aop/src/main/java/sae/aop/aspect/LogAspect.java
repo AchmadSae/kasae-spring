@@ -46,9 +46,32 @@ public class LogAspect {
         }
     }
 
-    @Before("pointCutHelloServiceStringParam()")
-    public void logStringParam(JoinPoint joinPoint){
-        String value =(String) joinPoint.getArgs()[0];
-        log.info("Executed method wih parameter :"+value);
+//    @Before("pointCutHelloServiceStringParam()")
+//    public void logStringParam(JoinPoint joinPoint){
+//        String value =(String) joinPoint.getArgs()[0];
+//        log.info("Executed method wih parameter :"+value);
+//    }
+
+    @Before("pointCutHelloServiceStringParam() && args(name1) && args(name2)")
+    public void logStringParam(String name1, String name2){
+        log.info("Executed method wih parameter :"+name1+" "+name2);
+    }
+
+    @Pointcut("execution(* sae.aop.service.*.*(..))")
+    public void pointCutServicePacakge(){}
+
+    @Pointcut("bean(*Service)")
+    public void pointCutServiceBean(){}
+    @Pointcut("execution(public * *(..))")
+    public void pointCutPublicMethod(){}
+
+    @Pointcut("pointCutServicePacakge() && pointCutServiceBean() && pointCutPublicMethod()")
+    public void publicMethodForService(){
+
+    }
+
+    @Before("publicMethodForService()")
+    public void logAllPublicServiceMethod(){
+        log.info("Log for All public service method");
     }
 }
