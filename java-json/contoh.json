@@ -1,0 +1,12 @@
+{
+  "lastName": "Saepudin",
+  "age": 25,
+  "firstName": "Achmad",
+  "isMarried": true,
+  "gender": "Male",
+  "adderss": {
+    "city": "Tangerang South",
+    "country": "Indonesia",
+    "street": "Gg.Musholah No,3"
+  }
+}
