@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.0</version>
+		<version>3.2.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sae</groupId>
-	<artifactId>java-json</artifactId>
+	<artifactId>common-service-csv</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Sae Learn JSON</name>
-	<description>Udemy Class Project Learn JSON</description>
+	<name>common-service-csv</name>
+	<description>Demo project for udemy course java common-service</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -27,15 +27,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<scope>2.16.0</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-annotations</artifactId>
-			<version>2.12.3</version>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-csv</artifactId>
+			<version>1.10.0</version>
 		</dependency>
 	</dependencies>
 
