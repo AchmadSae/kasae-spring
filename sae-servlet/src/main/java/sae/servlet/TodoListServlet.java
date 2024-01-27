@@ -18,17 +18,13 @@ public class TodoListServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().println(todos);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String todo = req.getParameter("todo");
-        if (todo != null){
+        if (!(todo == null)){
             todos.add(todo);
             resp.getWriter().println("Add todo : "+todo);
         }else {
-            resp.getWriter().println("Todo Must Exists");
+            resp.getWriter().println("Todo Must Exists . TodoList yang tersedia :"+todo);
+
         }
     }
 }
